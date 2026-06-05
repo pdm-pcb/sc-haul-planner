@@ -4,6 +4,7 @@ export const defaultCommodities: string[] = [
   "Aluminum",
   "Astatine",
   "Beryl",
+  "Carbon",
   "Copper",
   "Corundum",
   "Diamond",
