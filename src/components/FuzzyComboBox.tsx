@@ -146,8 +146,19 @@ export function FuzzyComboBox({
     }
   }
 
+  function handleBlur(event: React.FocusEvent<HTMLLabelElement>) {
+    const nextFocusedElement = event.relatedTarget as Node | null;
+    if (
+      nextFocusedElement === null ||
+      !event.currentTarget.contains(nextFocusedElement)
+    ) {
+      setIsOpen(false);
+      setHighlightedIndex(0);
+    }
+  }
+
   return (
-    <label className="combo-label" ref={rootRef}>
+    <label className="combo-label" ref={rootRef} onBlur={handleBlur}>
       {label}
 
       <div className="combo-box">
@@ -171,6 +182,7 @@ export function FuzzyComboBox({
                 }
                 key={option}
                 type="button"
+                tabIndex={-1}
                 onMouseDown={(event) => {
                   event.preventDefault();
                   selectOption(option);

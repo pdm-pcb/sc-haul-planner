@@ -1,11 +1,7 @@
 import type { LocationId } from "../domain/DeliveryLeg";
 
-export const defaultPickupLocations: LocationId[] = [
+export const defaultLocations: LocationId[] = [
   "Port Tressler",
-  "NB International Spaceport",
-];
-
-export const defaultDestinationLocations: LocationId[] = [
   "NB International Spaceport",
   "Sakura Sun Goldenrod Workcenter",
   "Greycat Stanton IV Production Complex-A",

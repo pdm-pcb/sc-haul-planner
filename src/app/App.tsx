@@ -1,9 +1,6 @@
 import type { DeliveryLeg } from "../domain/DeliveryLeg";
 import { groupDeliveryLegsByDestination } from "../domain/groupDeliveryLegs";
-import {
-  defaultDestinationLocations,
-  defaultPickupLocations,
-} from "../data/defaultLocations";
+import { defaultLocations } from "../data/defaultLocations";
 import { defaultCommodities } from "../data/defaultCommodities";
 import { useLocalStorageState } from "../storage/useLocalStorageState";
 import { DeliveryLegForm } from "../components/DeliveryLegForm";
@@ -41,8 +38,7 @@ export function App() {
 
       <div className="layout">
         <DeliveryLegForm
-          pickupLocations={defaultPickupLocations}
-          destinations={defaultDestinationLocations}
+          locations={defaultLocations}
           commodities={defaultCommodities}
           onAddLeg={handleAddLeg}
         />

@@ -16,6 +16,7 @@ export const defaultCommodities: string[] = [
   "Laranite",
   "Medical Supplies",
   "Processed Food",
+  "Pressurized Ice",
   "Quartz",
   "Scrap",
   "Stims",

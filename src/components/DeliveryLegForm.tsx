@@ -8,15 +8,13 @@ import {
 } from "../domain/groupDeliveryLegs";
 
 interface DeliveryLegFormProps {
-  pickupLocations: LocationId[];
-  destinations: LocationId[];
+  locations: LocationId[];
   commodities: string[];
   onAddLeg: (leg: DeliveryLeg) => void;
 }
 
 export function DeliveryLegForm({
-  pickupLocations,
-  destinations,
+  locations,
   commodities,
   onAddLeg,
 }: DeliveryLegFormProps) {
@@ -64,7 +62,7 @@ export function DeliveryLegForm({
       <FuzzyComboBox
         label="Pickup"
         value={pickup}
-        options={pickupLocations}
+        options={locations}
         onChange={setPickup}
         placeholder="Pickup location..."
       />
@@ -72,7 +70,7 @@ export function DeliveryLegForm({
       <FuzzyComboBox
         label="Destination"
         value={destination}
-        options={destinations}
+        options={locations}
         onChange={setDestination}
         placeholder="Drop-off location..."
       />
